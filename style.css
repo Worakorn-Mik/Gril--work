@@ -123,7 +123,7 @@ main p { margin: 0 0 24px; }
   display: grid; 
   /* จัดเรียงกล่องสินค้าให้เป็น “ตาราง” */
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* บอกว่า: ล็อคสิ้นค้า สามชิ้นต่อแถว*/
 
   gap: 20px; 
