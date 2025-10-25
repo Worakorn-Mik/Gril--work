@@ -36,13 +36,13 @@ a { color: inherit; text-decoration: none; }
 
 /* (B) กล่องความกว้างกลางหน้า */
 .container {
-  max-width: 1120px;    
+  max-width: 1200px;    
   /* ความกว้างสูงสุดของเนื้อหาในหน้า (ประมาณจอกว้างพอดีสายตา) */
 
   margin-inline: auto;  
   /* ห้อยู่กลางจอ (ซ้าย-ขวาเป็น auto) */
 
-  padding-inline: 16px; 
+  padding-inline: 40px; 
   /* ขอบซ้าย-ขวา 16px เผื่อจอเล็กจะไม่ชิดขอบ */
 }
 
@@ -109,7 +109,11 @@ nav a:hover { color: #ffe8b3; text-decoration: underline; }
 }
 
 /* (D) ระยะห่างเนื้อหาหลัก */
-main { padding-block: 24px; }
+main { 
+  padding-block: 24px;
+  padding-inline: 40px;
+  margin-bottom: 60px; 
+}
 /* ให้มีช่องไฟด้านบน-ล่างของส่วนเนื้อหา */
 
 main h2 { margin: 0 0 8px; }
@@ -205,6 +209,113 @@ main p { margin: 0 0 24px; }
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 20px;
+}
+
+/* ===== (I) Footer Styling ===== */
+footer {
+  background: #fff4e5; /* สีพื้นอ่อน ๆ ดูอบอุ่น */
+  border-top: 2px solid #f0d9b5; /* เส้นแบ่งจากเนื้อหาด้านบน */
+  margin-top: 40px;
+  padding-top: 20px;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Layout 2 คอลัมน์หลัก: newsletter + link */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+footer h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer h5 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+footer form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+footer input[type="email"] {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+footer button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+footer button:hover {
+  background: #000;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  border-top: 1px solid #f0d9b5;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Responsive: เมื่อจอเล็กลงให้แสดงซ้อนกันแทน */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 
