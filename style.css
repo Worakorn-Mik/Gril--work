@@ -98,7 +98,7 @@ nav ul {
   margin: 0; padding: 0;         
   /* เอาระยะว่างเริ่มต้นของ ul ออก */
 }
-nav a:hover { text-decoration: underline; }
+nav a:hover { color: #ffe8b3; text-decoration: underline; }
 /* ตอนเอาเมาส์ชี้บนลิงก์ ให้มีเส้นใต้เพื่อบอกว่า “กดได้” */
 
 /* กล่องแสดงจำนวนรายการ */
@@ -152,6 +152,7 @@ main p { margin: 0 0 24px; }
 
   transition: transform 0.2s;
   /* ถ้าอยากให้มันขยับนิดๆ ตอนเอาเมาส์ชี้ */
+  box-shadow: 0 4px 5px rgba(0,0,0,0.08);
 }
 
 .product:hover {
@@ -166,6 +167,12 @@ main p { margin: 0 0 24px; }
 
   border-radius: 8px;
   /* มุมรูปโค้งนิดหน่อยให้เข้ากับกล่อง */
+}
+
+.product img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  /* เวลาเอาเมาส์วางบนรูป รูปจะขยายขึ้นนิดนึง */
 }
 
 /* ===== (H) ข้อความในสินค้า ===== */
