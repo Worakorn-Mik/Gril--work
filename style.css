@@ -56,7 +56,8 @@ header {
 }
 
 .header-row {
-  display: -webkit-flex;                  
+  /*display: -webkit-flex; */ 
+  display: flex;                
   /* เรียงลูก ๆ ในแถวเดียว (โลโก้ / เมนู / 10 Items) */
 
   align-items: center;           
@@ -116,3 +117,103 @@ main h2 { margin: 0 0 8px; }
 
 main p { margin: 0 0 24px; }
 /* ข้อความคำอธิบายใต้หัวข้อ มี margin ล่าง 24px */
+
+/* (E) พื้นที่รวมสินค้าทั้งหมด */
+.product-grid {
+  display: grid; 
+  /* จัดเรียงกล่องสินค้าให้เป็น “ตาราง” */
+
+  grid-template-columns: repeat(3, 1fr);
+  /* บอกว่า: ล็อคสิ้นค้า สามชิ้นต่อแถว*/
+
+  gap: 20px; 
+  /* ระยะห่างระหว่างสินค้าแต่ละชิ้น */
+
+  padding: 20px 0;
+  /* ช่องว่างขอบบน–ล่างเล็กน้อย */
+}
+
+/* ===== (F) กล่องสินค้าแต่ละชิ้น ===== */
+.product {
+  background: white;
+  /* กล่องแต่ละอันเป็นพื้นสีขาว */
+
+  border-radius: 10px;
+  /* มุมกล่องโค้งมนเล็กน้อย */
+
+  padding: 10px;
+  /* เว้นช่องภายใน (ขอบกับข้อความ) */
+
+  text-align: center;
+  /* จัดข้อความให้อยู่ตรงกลาง */
+
+  border: 1px solid #ddd;
+  /* ใส่เส้นบางๆ รอบกล่องเพื่อให้ดูเป็นการ์ด */
+
+  transition: transform 0.2s;
+  /* ถ้าอยากให้มันขยับนิดๆ ตอนเอาเมาส์ชี้ */
+}
+
+.product:hover {
+  transform: scale(1.05);
+  /* เวลาเอาเมาส์วางบนสินค้า กล่องจะขยายขึ้นนิดนึง */
+}
+
+/* ===== (G) รูปภาพในสินค้า ===== */
+.product img {
+  width: 100%;
+  /* รูปเต็มความกว้างของกล่อง */
+
+  border-radius: 8px;
+  /* มุมรูปโค้งนิดหน่อยให้เข้ากับกล่อง */
+}
+
+/* ===== (H) ข้อความในสินค้า ===== */
+.product-info h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.product-info p {
+  margin: 0 0 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.price {
+  color: #111;
+}
+
+.category {
+  background: #ffe8b3;
+  color: #a86800;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+/* ========= Media query สำหรับหน้าจอเล็ก ========= */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
